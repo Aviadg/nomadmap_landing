@@ -21,21 +21,38 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="canonical" href="https://home.thenomadmap.com/" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HGZSS9ERDH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-HGZSS9ERDH");
+    </script>
+    <!-- Event snippet for Sign-up conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-16477635502/CeKNCJ7W-5cZEK6Hk7E9",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
   </head>
   <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-HGZSS9ERDH"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-HGZSS9ERDH");
-  </script>
   <body>
     <!--[if lte IE 9]>
       <p class="browserupgrade">
@@ -107,7 +124,7 @@
                       <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                      <a href="https://thenomadmap.com/">To The App</a>
+                      <a href="https://thenomadmap.com/" onclick="return gtag_report_conversion('https://thenomadmap.com/')">To The App</a>
                     </li>
                   </ul>
                 </div>
@@ -141,6 +158,7 @@
                 href="https://thenomadmap.com/"
                 class="main-btn border-btn btn-hover wow fadeInUp"
                 data-wow-delay=".6s"
+                onclick="return gtag_report_conversion('https://thenomadmap.com/')"
                 >To The App</a
               >
               <a href="#features" class="scroll-bottom">
@@ -272,6 +290,7 @@
                 href="https://thenomadmap.com/"
                 class="main-btn btn-hover border-btn wow fadeInUp"
                 data-wow-delay=".6s"
+                onclick="return gtag_report_conversion('https://thenomadmap.com/')"
                 >To The App</a
               >
             </div>
